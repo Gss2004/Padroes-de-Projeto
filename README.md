@@ -1,3 +1,5 @@
+
+
 ---
 
 # Implementação de Padrões de Projeto
@@ -183,3 +185,4 @@ public class Context {
 ```
 
 --- 
+

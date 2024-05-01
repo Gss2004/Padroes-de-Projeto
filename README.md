@@ -20,47 +20,12 @@ A solução é definir uma interface para criar objetos em uma superclasse, mas 
 
 #### Diagrama UML:
 ```plaintext
-                      +--------------+
-                      |   Creator    |
-                      +--------------+
-                      | +factoryMethod()|
-                      +------+-------+
-                             |
-                  +----------+-----------+
-                  |                      |
-          +--------------+       +--------------+
-          |   Concrete   |       |   Concrete   |
-          |   Creator    |       |   Creator    |
-          +--------------+       +--------------+
-          |   +factoryMethod()|   |   +factoryMethod()|
-          +------------------+   +------------------+
+                     
 ```
 
 #### Código:
 
-```java
-public abstract class Creator {
-    public abstract Product factoryMethod();
-}
 
-public class ConcreteCreator extends Creator {
-    @Override
-    public Product factoryMethod() {
-        return new ConcreteProduct();
-    }
-}
-
-public interface Product {
-    void operation();
-}
-
-public class ConcreteProduct implements Product {
-    @Override
-    public void operation() {
-        System.out.println("Operation implemented in ConcreteProduct");
-    }
-}
-```
 
 ## Padrões Estruturais:
 ### Adapter:
@@ -75,50 +40,12 @@ O Adapter envolve um objeto com uma interface diferente, fornecendo uma maneira 
 
 #### Diagrama UML:
 ```plaintext
-                      +--------------+
-                      |    Target    |
-                      +--------------+
-                      | +request()   |
-                      +------+-------+
-                             |
-                  +----------+-----------+
-                  |                      |
-          +--------------+       +----------------+
-          |    Adapter   |       |   Adaptee      |
-          +--------------+       +----------------+
-          | -adaptee: Adaptee |   | +specificRequest()|
-          +------------------+   +------------------+
-                  |                      |
-                  |  +request()          |
-                  +----------------------+
+                     
 ```
 
 #### Código:
 
-```java
-public interface Target {
-    void request();
-}
 
-public class Adapter implements Target {
-    private Adaptee adaptee;
-
-    public Adapter(Adaptee adaptee) {
-        this.adaptee = adaptee;
-    }
-
-    @Override
-    public void request() {
-        adaptee.specificRequest();
-    }
-}
-
-public class Adaptee {
-    public void specificRequest() {
-        System.out.println("Specific request in Adaptee");
-    }
-}
-```
 
 ## Padrões Comportamentais:
 ### Strategy:
@@ -133,56 +60,8 @@ A solução é definir uma família de algoritmos, encapsulando cada um deles e 
 
 #### Diagrama UML:
 ```plaintext
-                      +---------------------+
-                      |      Context        |
-                      +---------------------+
-                      | -strategy: Strategy |
-                      +---------------------+
-                      | +contextInterface() |
-                      +----------+----------+
-                                 |
-                 +---------------+--------------+
-                 |                              |
-          +---------+                   +---------+
-          | Strategy|                   | Strategy|
-          +---------+                   +---------+
-          |+algorithm()|                |+algorithm()|
-          +------------+                +------------+
+                    
 ```
 
 #### Código:
-
-```java
-public interface Strategy {
-    void algorithm();
-}
-
-public class ConcreteStrategyA implements Strategy {
-    @Override
-    public void algorithm() {
-        System.out.println("Executing algorithm A");
-    }
-}
-
-public class ConcreteStrategyB implements Strategy {
-    @Override
-    public void algorithm() {
-        System.out.println("Executing algorithm B");
-    }
-}
-
-public class Context {
-    private Strategy strategy;
-
-    public Context(Strategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public void contextInterface() {
-        strategy.algorithm();
-    }
-}
-```
-
---- 
 

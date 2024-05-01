@@ -1,5 +1,3 @@
-Claro, vou organizar o README para você:
-
 ---
 
 # Implementação de Padrões de Projeto
@@ -185,5 +183,3 @@ public class Context {
 ```
 
 --- 
-
-Espero que isso ajude! Se precisar de mais alguma coisa, estou à disposição!

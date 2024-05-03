@@ -1,3 +1,6 @@
+# Implementação de Padrões de Projeto
+**Introdução**:
+Neste projeto, demonstraremos alguns padrões importantes de padrões de projeto, distribuídos por um padrão de cada categoria: criacional, estrutural e comportamental.
 
 ### Padrões Criacionais:
 
